@@ -1,0 +1,81 @@
+ServerAliveInterval 600
+ServerAliveCountMax 100
+
+Host ekplx*
+	Hostname = %h.physik.uni-karlsruhe.de
+	Compression = yes
+	User = tmueller
+	ForwardX11 = yes
+
+Host ekpcms*
+	Hostname = %h.physik.uni-karlsruhe.de
+	Compression = yes
+	User = tmueller
+	ForwardX11 = yes
+
+Host ekpams*
+	Hostname = %h.physik.uni-karlsruhe.de
+	Compression = yes
+	User = tmueller
+	ForwardX11 = yes
+
+Host naf
+	Hostname = naf-cms.desy.de
+	Compression = yes
+	User = tmuller
+	ForwardX11 = yes
+
+Host naf1
+	Hostname = nafhh-cms01.desy.de
+	Compression = yes
+	User = tmuller
+	ForwardX11 = yes
+
+Host naf2
+	Hostname = nafhh-cms02.desy.de
+	Compression = yes
+	User = tmuller
+	ForwardX11 = yes
+
+Host naf3
+	Hostname = nafhh-cms03.desy.de
+	Compression = yes
+	User = tmuller
+	ForwardX11 = yes
+
+Host naf4
+	Hostname = nafhh-cms04.desy.de
+	Compression = yes
+	User = tmuller
+	ForwardX11 = yes
+
+Host lxplus*	
+	Hostname = %h.cern.ch
+	Compression = yes
+	User = tmuller
+	ForwardX11 = yes
+
+Host naf5
+	Hostname = nafhh-cms05.desy.de
+	Compression = yes
+	User = tmuller
+	ForwardX11 = yes
+
+Host naf6
+	Hostname = nafhh-cms06.desy.de
+	Compression = yes
+	User = tmuller
+	ForwardX11 = yes
+
+Host rzlx1
+	Hostname = rzlx1.rz.uni-karlsruhe.de
+	Compression = yes
+	User = bd156
+	ForwardX11 = yes
+
+Host rzstud
+	Hostname = rzstud.rz.uni-karlsruhe.de
+	Compression = yes
+	User = udbzc
+	ForwardX11 = yes
+
