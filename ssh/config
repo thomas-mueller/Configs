@@ -6,6 +6,7 @@ Host lx3b*
 	Compression = yes
 	User = tmuller
 	ForwardX11 = yes
+	ProxyCommand = ssh -l  tmuller portal.physik.rwth-aachen.de "nc %h 22"
 
 Host rwthportal
 	Hostname = portal.physik.rwth-aachen.de
