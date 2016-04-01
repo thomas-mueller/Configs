@@ -1,6 +1,24 @@
 ServerAliveInterval 600
 ServerAliveCountMax 100
 
+Host lx3b*
+	Hostname = %h.physik.rwth-aachen.de
+	Compression = yes
+	User = tmuller
+	ForwardX11 = yes
+
+Host rwthportal
+	Hostname = portal.physik.rwth-aachen.de
+	Compression = yes
+	User = tmuller
+	ForwardX11 = yes
+
+Host rwthtunnel
+	Hostname = portal.physik.rwth-aachen.de
+	Compression = yes
+	User = tmuller
+	ForwardX11 = yes
+
 Host ekplx*
 	Hostname = %h.physik.uni-karlsruhe.de
 	Compression = yes
