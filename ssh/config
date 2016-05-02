@@ -73,6 +73,10 @@ Host lxplus*
 	Compression = yes
 	User = tmuller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
+	GSSAPITrustDns = yes
+	GSSAPIAuthentication = yes
+	GSSAPIDelegateCredentials = yes
 
 Host naf5
 	Hostname = nafhh-cms05.desy.de
