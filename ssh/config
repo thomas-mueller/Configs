@@ -6,6 +6,7 @@ Host lx3b*
 	Compression = yes
 	User = tmuller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
 	ProxyCommand = ssh -l  tmuller portal.physik.rwth-aachen.de "nc %h 22"
 
 Host rwthportal
@@ -13,60 +14,70 @@ Host rwthportal
 	Compression = yes
 	User = tmuller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
 
 Host rwthtunnel
 	Hostname = portal.physik.rwth-aachen.de
 	Compression = yes
 	User = tmuller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
 
 Host ekplx*
 	Hostname = %h.physik.uni-karlsruhe.de
 	Compression = yes
 	User = tmueller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
 
 Host ekpcms*
 	Hostname = %h.physik.uni-karlsruhe.de
 	Compression = yes
 	User = tmueller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
 
 Host ekpams*
 	Hostname = %h.physik.uni-karlsruhe.de
 	Compression = yes
 	User = tmueller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
 
 Host naf
 	Hostname = naf-cms.desy.de
 	Compression = yes
 	User = tmuller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
 
 Host naf1
 	Hostname = nafhh-cms01.desy.de
 	Compression = yes
 	User = tmuller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
 
 Host naf2
 	Hostname = nafhh-cms02.desy.de
 	Compression = yes
 	User = tmuller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
 
 Host naf3
 	Hostname = nafhh-cms03.desy.de
 	Compression = yes
 	User = tmuller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
 
 Host naf4
 	Hostname = nafhh-cms04.desy.de
 	Compression = yes
 	User = tmuller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
 
 Host lxplus*
 	Hostname = %h.cern.ch
@@ -78,11 +89,14 @@ Host lxplus*
 	GSSAPIAuthentication = yes
 	GSSAPIDelegateCredentials = yes
 
-Host cmsusr1*
-	Hostname = %h.cern.ch
-	Compression = yes
-	User = tmuller
-	ForwardX11 = yes
+Host cmsusr cmsusr* cmsusr*.cms
+	User tmuller
+	Protocol 2
+	ForwardAgent yes
+	ForwardX11 yes
+	ForwardX11Trusted no
+	ProxyCommand ssh lxplus nc %h 22
+	DynamicForward 8081
 	ForwardX11Trusted = yes
 	GSSAPITrustDns = yes
 	GSSAPIAuthentication = yes
@@ -93,22 +107,12 @@ Host naf5
 	Compression = yes
 	User = tmuller
 	ForwardX11 = yes
+	ForwardX11Trusted = yes
 
 Host naf6
 	Hostname = nafhh-cms06.desy.de
 	Compression = yes
 	User = tmuller
 	ForwardX11 = yes
-
-Host rzlx1
-	Hostname = rzlx1.rz.uni-karlsruhe.de
-	Compression = yes
-	User = bd156
-	ForwardX11 = yes
-
-Host rzstud
-	Hostname = rzstud.rz.uni-karlsruhe.de
-	Compression = yes
-	User = udbzc
-	ForwardX11 = yes
+	ForwardX11Trusted = yes
 
