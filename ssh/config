@@ -1,7 +1,7 @@
 ServerAliveInterval 600
 ServerAliveCountMax 100
 
-Host lx3b*
+Host lx3b*, lxblade*
 	Hostname = %h.physik.rwth-aachen.de
 	Compression = yes
 	User = tmuller
