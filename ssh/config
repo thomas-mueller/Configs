@@ -1,27 +1,35 @@
 ServerAliveInterval 600
 ServerAliveCountMax 100
 
-Host lx3b* lxblade*
-	Hostname = %h.physik.rwth-aachen.de
-	Compression = yes
+Host *.physik.rwth-aachen.de
 	User = tmuller
-	ForwardX11 = yes
-	ForwardX11Trusted = yes
-	ProxyCommand = ssh -l  tmuller portal.physik.rwth-aachen.de "nc %h 22"
 
 Host rwthportal
-	Hostname = portal.physik.rwth-aachen.de
-	Compression = yes
 	User = tmuller
+	HostName = lxportal1.physik.rwth-aachen.de
 	ForwardX11 = yes
 	ForwardX11Trusted = yes
+	DynamicForward 8081
 
-Host rwthtunnel
-	Hostname = portal.physik.rwth-aachen.de
-	Compression = yes
+Host tunnel
 	User = tmuller
+	HostName = tunnel.physik.rwth-aachen.de
 	ForwardX11 = yes
 	ForwardX11Trusted = yes
+	DynamicForward 8081
+
+Host lx3* lxblade*
+	User = tmuller
+	ProxyCommand = bash -c "if nc -z %h %p &> /dev/null; then exec nc %h %p; else exec ssh tunnel.physik.rwth-aachen.de -W %h:%p 2> /dev/null; fi"
+	ForwardX11 = yes
+	ForwardX11Trusted = yes
+	DynamicForward 8081
+
+Host *
+	Port = 22
+	StrictHostKeyChecking = no
+	Compression = no
+	Cipher = blowfish-cbc
 
 Host ekplx*
 	Hostname = %h.physik.uni-karlsruhe.de
