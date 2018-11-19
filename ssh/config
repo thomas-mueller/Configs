@@ -104,7 +104,7 @@ Host cmsusr cmsusr* cmsusr*.cms
 	ForwardX11 yes
 	ForwardX11Trusted no
 	ProxyCommand ssh lxplus nc %h 22
-	DynamicForward 8081
+	DynamicForward 8082
 	ForwardX11Trusted = yes
 	GSSAPITrustDns = yes
 	GSSAPIAuthentication = yes
@@ -124,3 +124,9 @@ Host naf6
 	ForwardX11 = yes
 	ForwardX11Trusted = yes
 
+Host ihep
+	Hostname = lxslc6.ihep.ac.cn
+	Compression = yes
+	User = precision
+	ForwardX11 = yes
+	ForwardX11Trusted = yes
