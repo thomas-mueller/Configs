@@ -124,3 +124,10 @@ Host naf6
 	ForwardX11 = yes
 	ForwardX11Trusted = yes
 
+Host harry_sshpc
+	Hostname = lxplus.cern.ch
+	Compression = yes
+	User = tmuller
+	GSSAPITrustDns = yes
+	GSSAPIAuthentication = yes
+	GSSAPIDelegateCredentials = yes
